@@ -1,0 +1,36 @@
+<!--<div id="scrollbar">
+    <div class="handle"></div>
+</div>-->
+
+    <section id="content">
+        
+        <div class="tab">
+            <div class="tabNav">
+                <ul>
+                    <li><a href="#/index" class="tabNowBtn">正在热映</a></li>
+                </ul>
+            </div>
+            <div class="tabList">
+                <div class="tabNow">
+                    <ul>                 
+                        <li ng-repeat="film in films">
+                            <input name="film_id" type="text" ng-model="film._id" value="{{film._id}}" required hidden/>
+                            <a href="#/film" ng-disabled="myForm.$invalid" ng-click="showFilm(film._id)"><img src="{{film.small_img}}"></a>
+                            <p>{{film.name}}</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!--         <div class="sidebar">
+    <div class="notice">
+        <p>服务公告</p>
+        <ul>
+            
+            <li><a href="notice/${notice.noticeid}">{{notice.title}}</a></li>
+
+        </ul>
+    </div>
+    
+</div> -->
+    </section>
