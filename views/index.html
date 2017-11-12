@@ -40,9 +40,9 @@
     <nav id="top_nav">
         <ul class="inline-style clearfix">
             <li class="active"><a href="#/">{{txt.home}}</a></li>
-            <li class="active"><a href="#/{{login.url}}">{{login.name}}</a></li>
-            <li class="active"><a href="#/{{signup.url}}">{{signup.name}}</a></li>
-            <li class="active"><a href="javascript:;" ng-click="filmsInit()">DoDo电影网</a></li>
+            <li class="active"><a href="#/{{login.url}}" ng-bind="login.name"></a></li>
+            <li class="active"><a href="#/{{signup.url}}" ng-bind="signup.name">{{signup.name}}</a></li>
+            <li class="active"><a href="javascript:;" ng-click="filmsInit()"></a></li>
             <li class="active"><a href="#/orderlist" ng-click="showOrder()">我的订单</a></li>
         </ul>
     </nav>

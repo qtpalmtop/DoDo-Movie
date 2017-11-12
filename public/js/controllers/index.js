@@ -5,14 +5,7 @@
  * Time: 10:21 AM
  * To change this template use File | Settings | File Templates.
  */
-/*//TODO Define module
-define(['../app'], function (app) {
-    return app.controller('IndexController', function ($scope, $rootScope, $http) {
-    $scope.title = "NJBlog";
-        $rootScope.title="NJBLog simple ,fluent"
-    });
 
-});*/
 define([], function() {
 
     var IndexController = ["$scope", "$rootScope", "$http", "$location", function($scope, $rootScope, $http, $location) {
@@ -58,27 +51,7 @@ define([], function() {
                 $scope.$parent.setFilm(data); //将index作用域获取的film传递给父级layout作用域
             });
         };
-        //$scope.filmsInit();
-        /*      $(".blog").sly({scrollBy:500,scrollBar:"id='scrollbar'",dragHandle:1,dynamicHandle:1,startAt:0});*/
-        /*     $(function(){
-                 console.log("scroll bar");
-                 $(".blog").mCustomScrollbar({
-                     scrollButtons:{
-                         enable:true
-                     }
-                 });
-             });*/
-
-
     }];
 
     return IndexController;
 });
-
-/*define(['app','i18n!resources/nls/res'], function (app,res) {
-    return app.controller('IndexController', function ($scope, $rootScope) {
-        $scope.title = res.title;
-        $rootScope.title= res.title;
-    });
-
-});*/

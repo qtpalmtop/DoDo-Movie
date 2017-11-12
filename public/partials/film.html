@@ -2,13 +2,13 @@
         <div class="crumbs">
             您当前的位置： <a class="pos" href="#/index">首页</a> > <a
                 class="pos" href="#">正在热映</a>
-            > {{film.name}}
+            > <span ng-bind="film.name"></span>
         </div>
         <h3 class="movieName">
             <em>{{film.name}} <span>{{film.tap}}</span>
             </em>
             <a id="min_1" href="#/ticket" ng-click="showTicket(film._id)">我要购票</a> 
-            <a id="min_2" href="#goto">发表影评</a>
+            
         </h3>
         <div id="poster">
             <img src="{{film.img_url}}" height="400px" width="1000px">
@@ -46,22 +46,18 @@
                 </div>
             </div>
             
-            <!-- <div class="review">
+            <div class="review">
                 <h5>
                     影片评论 
                 </h5>
                 <ul class="movie_say">
-                    <c:forEach items="{{comments}}" var="com">
-                        <li id="say_1">
-                                <c:if test="{{com.id == film.id }}">
-                            <div class="say_content">
-                                <p class="say_name">{{com.username}}</p>
-                                <p>{{com.comment}}</p>
-                                <div class="say_time">发表日期：{{com.comtime}}</div>
-                            </div>
-                            </c:if>
-                        </li>
-                    </c:forEach>
+                    <li ng-repeat="com in comments" id="say_1">     
+                        <div class="say_content">
+                            <p class="say_name">{{com.user_id.name}}评论说:</p>
+                            <p>{{com.comment}}</p>
+                            <div class="say_time">发表日期：{{com.pub_time}}</div>
+                        </div>
+                    </li>
                 </ul>
                 <div class="movie_my_say">
                     <table id="say_main">
@@ -74,33 +70,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <form action="/storm/film/addcom" method="get">
-                            <tr>
-                                <td hidden><input type="text" name="filmid" value={{film.id}}></input>
-                            
-                                </td>
-                            <td colspan:"2" id="mycontent"><textarea name="comment"
-                                    width="700px" id="content2" cols="120" rows="10"
-                                    placeholder="我要发表影评~"></textarea></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <hr />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button type="submit" id="goto">发表</button>
-                                </td>
-                            </tr>
-                            
-                        </form>
+                            <form>
+                                <tr>
+                                    <td hidden><input type="text" name="filmid" value="{{film._id}}" />
+                                
+                                    </td>
+                                    <td colspan:"2" id="mycontent"><textarea name="comment"
+                                        width="700px" value="{{comment.comment}}" ng-model="comment.comment" id="content2" cols="120" rows="10"
+                                        placeholder="我要发表影评~"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <hr />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a href="#/commentlist" ng-click="pubComment(film._id)" id="goto"><button>发表</button></a>
+                                    </td>
+                                </tr>
+                            </form>
                         </tbody>
                     </table>
                 </div>
             </div>
-            </c:if>
-                    </div>
-                    <span class="write_review"></span>
-                </div> -->
+        </div>
+        <span class="write_review"></span>
     </div>

@@ -34,8 +34,9 @@
 				<td>{{ticket.film_id.type}}</td>
 				<td>{{ticket.film_id.play_time}}分钟</td>
 				<td>{{ticket.price}}</td>
-				<td><a  href="#/orderlist" ng-click="buy(user_id,ticket.film_id._id,ticket._id)" >购买</a></td>
+				<td><a  href="#/orderlist" ng-click="buy(ticket.film_id._id,ticket._id)" >购买</a></td>
 			</form>
+			<span>{{err}}</span>
 		</tr>			
 	</table>
 	</div>

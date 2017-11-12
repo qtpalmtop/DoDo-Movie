@@ -9,6 +9,7 @@
     text-align: left;
     padding-top: 40px;
     position: relative;
+    font-family: 微软雅黑
 }
 
 .wrap_top_nav {
@@ -134,42 +135,25 @@
 }
 
 
-#content .tab {
+.tab {
     width: 815px;
     /*background: #96EEAA;*/
     float: left;
 }
-#content .tab .tabNav {
-    width: 100%;
-    height: 52px;
-    /*background: #ECB8B8;*/
-}
-#content .tab .tabNav li{
-    float: left;    
-    text-align: center;
-    
-    /* border: 1px solid #197FA5; */
-    border-bottom:none;
-}
-
-#content .tab .tabNav li:nth-child(1){
-    border-right:none;
-}
-#content .tab .tabNav li a {
-    /*background: #D8E4B2;*/
-    line-height: 50px;
-    
+.tab .tabNav {
+    height: 44px;
+    padding:4px 5px;
     font-size: 20px;
-    display: block;
-    width: 160px;
-    font-weight: bold;
+    background-color: #4C5356;
+    color:#fff;
 }
-#content .tab .tabNav li{
-    color: #197FA5;
+.tabNav p{
+    line-height: 44px;
+    text-align: center;
 }
-#content .tab .tabList {
-    /* border: 1px solid #BDDDF4; */
-    padding-top: 20px;
+.tabList {
+    border: 1px solid #4A6274;
+    border-top: none;
     padding-bottom: 20px;
     overflow: hidden;
 
@@ -177,9 +161,9 @@
     /*border-top: none;*/
 }
 
-#content .tab .tabList .tabNow ul li{
+.tabNow ul li{
     float: left;
-    height: 280px;
+    height: 250px;
     width: 190px;
     margin-left: 10px;
     text-align: center;
@@ -189,178 +173,14 @@
     position: relative;
 
 }
-#content .tab .tabList .tabNow ul li .mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 250px;
-    padding: 10px;
-    background-color: rgba(0,0,0,0.5);
-    box-sizing: border-box;
-    color: white;
-    display: none;
-}
-#content .tab .tabList .tabNow ul li .mask .tag{
-    position: absolute;
-    font-size: 15px;
-}
-
-#content .tab .tabList .tabNow ul li .mask .play{
-    position: absolute;
-    top: 40%;
-    left: 20%;
-}
-#content .tab .tabList .tabNow ul li .mask p{
-    position: absolute;
-    bottom: 30px;
-    width: 150px;
-}
-
-#content .tab .tabList .tabNow ul li .mask .play img {
-    width: 50px;
-    height: 50px;
-}
-
-
-#content .tab .tabList .tabNow ul li img {
-    width: 100%;
-    height: 250px;
-
-}
-
-#content .tab .tabList .tabOn {
-    display: none;
-}
-
-
-#content .tab .tabList .tabOn ul li{
-    float: left;
-    height: 280px;
-    width: 190px;
-    margin-left: 10px;
-    text-align: center;
-    font-size: 15px;
-    /*background-color: #F8C3C3;*/
-    margin-top: 30px;
-    position: relative;
-
-}
-
-#content .tab .tabList .tabOn ul li .mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 250px;
-    padding: 10px;
-    background-color: rgba(0,0,0,0.5);
-    box-sizing: border-box;
-    color: white;
-    display: none;
-}
-#content .tab .tabList .tabOn ul li .mask .tag{
-    position: absolute;
-    font-size: 15px;
-}
-
-#content .tab .tabList .tabOn ul li .mask .play{
-    position: absolute;
-    top: 40%;
-    left: 20%;
-}
-#content .tab .tabList .tabOn ul li .mask p{
-    position: absolute;
-    bottom: 30px;
-    width: 150px;
-}
-
-#content .tab .tabList .tabOn ul li .mask .play img {
-    width: 50px;
-    height: 50px;
-}
-
-
-#content .tab .tabList .tabOn ul li img {
-    width: 100%;
-    height: 250px;
-
-}
-
-
-
-
-#content .sidebar {
-    width: 270px;
-    /*height: 20px;*/
-    float: right;
-    /*background: #6FA98D;*/
-    margin-top:42px;
-}
-
-#content .sidebar .notice {
-    height: 300px;
-    width:268px;
-    border:1px solid #BDDDF4;
-}
-#content .sidebar .notice p{
-    /* border: 1px solid #BDDDF4; */
-    border-bottom: none;
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
-    color: #BDDDF4;
-    font-weight: bold;
-    width: 100px;
-}
-
-#content .sidebar .notice ul {
-    border-top: 1px solid #BDDDF4;
-    padding:100px 0 0 50px;
-}
-
-#content .sidebar .notice ul li{
-    height: 35px;
-}
-#content .sidebar .notice ul li a{
-    display: block;
-    font-size: 15px;
-    color: #909090;
-}
-#content .sidebar .notice ul li a:hover {
-    color: #8FCEC2;
-}
-
-#content .sidebar .ad {
-    height: 300px;
-    border: 1px solid #BDDDF4;
-
-}
-
-#content2{
+.tabNow ul li img{
     width:100%;
+    height:100%;
 }
- .notice{
-    width:80%;
-    border:1px solid #c5c5c5;
-    margin:10px auto;
-}
-.notice .notice-head{
-    height:60px;
-    border-bottom:1px solid #c6c6c6;
-    text-align:center;
-    line-height:60px;
-}
- .notice .notice-content{
-    height:300px;
-    margin:20px auto;
-    text-align:left;
-    text-indent: 2em;
-}
-
-
 /* film页面 */
-
+#content2{
+    width: 100%;
+}
 .content{
     position: relative;
     width:1000px;
@@ -484,15 +304,20 @@ h3 a{
 .say_content{
   position: relative;
   width: 100%;
-  height: 137px;
+  height: 90px;
   /*line-height: 137px;*/
   border-bottom: #cc9 1px solid;
   margin: 10px auto;
 
 }
+.say_name{
+    font-size: 14px;
+    font-family: 微软雅黑;
+    margin-bottom:10px;
+    color:#3f9aa1;
+}
 .say_time{
     position: absolute;
-    width: 20%;
     height: 40px; 
     right: 10px;
     bottom: 1px;

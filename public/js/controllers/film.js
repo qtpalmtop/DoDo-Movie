@@ -5,29 +5,33 @@
  * Time: 10:21 AM
  * To change this template use File | Settings | File Templates.
  */
-/*//TODO Define module
-define(['../app'], function (app) {
-    return app.controller('IndexController', function ($scope, $rootScope, $http) {
-    $scope.title = "NJBlog";
-        $rootScope.title="NJBLog simple ,fluent"
-    });
 
-});*/
 define([], function() {
 
     var FilmController = ["$scope", "$rootScope", "$http", "$location", function($scope, $rootScope, $http, $location) {
         $scope.title = "DoDo电影网基于nodejs";
         $rootScope.title = "DoDo电影网基于nodejs";
         $scope.imgs = Array.from($scope.film.img_urls).toString().split(',');
-        console.log($scope.imgs);
+        $scope.comment = {
+            film_id: '',
+            comment: ''
+        };
+        $scope.CommentsInit = function() {
+            $scope.comment.film_id = $scope.film._id;
+            console.log("请求发送的的film_id" + $scope.comment.film_id);
+            $http.post('/commentlist', $scope.comment).success(function(data) {
+                if (data.err) {
+                    console.log(data.err);
+                    return $scope.err = data.err;
+                }
+                $scope.comments = data;
+            });
+        };
+        $scope.CommentsInit(); //获取页面数据
 
         $scope.ticket = {
-            film_id: '',
-            play_date: '',
-            seats: '',
-            price: ''
+            film_id: ''
         };
-        console.log(666);
 
         $scope.showTicket = function(id) { //这里要传递id才行
             $scope.ticket.film_id = id;
@@ -41,27 +45,22 @@ define([], function() {
                 $scope.$parent.setTicket(data); //将index作用域获取的film传递给父级layout作用域
             });
         };
-        //$scope.filmsInit();
-        /*      $(".blog").sly({scrollBy:500,scrollBar:"id='scrollbar'",dragHandle:1,dynamicHandle:1,startAt:0});*/
-        /*     $(function(){
-                 console.log("scroll bar");
-                 $(".blog").mCustomScrollbar({
-                     scrollButtons:{
-                         enable:true
-                     }
-                 });
-             });*/
+
+        $scope.pubComment = function(id) { //这里要传递id才行
+            $scope.comment.film_id = id;
+            $http.post('/comment', $scope.comment).success(function(data) {
+                if (data.err) {
+                    return $scope.err = data.err;
+                }
+                $scope.comments = data;
+                console.log(data);
+                console.log("添加评论成功");
+                //$scope.$parent.setTicket(data); //将index作用域获取的film传递给父级layout作用域
+            });
+        };
 
 
     }];
 
     return FilmController;
 });
-
-/*define(['app','i18n!resources/nls/res'], function (app,res) {
-    return app.controller('IndexController', function ($scope, $rootScope) {
-        $scope.title = res.title;
-        $rootScope.title= res.title;
-    });
-
-});*/

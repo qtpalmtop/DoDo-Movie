@@ -11,6 +11,14 @@ define(['app', 'controllers/index', 'controllers/login', 'controllers/logout', '
                 templateUrl: 'partials/film.html',
                 controller: film
             }).
+            when('/commentlist', {
+                templateUrl: 'partials/film.html',
+                controller: film
+            }).
+            when('/comment', {
+                templateUrl: 'partials/film.html',
+                controller: film
+            }).
             when('/ticket', {
                 templateUrl: 'partials/ticket.html',
                 controller: ticket

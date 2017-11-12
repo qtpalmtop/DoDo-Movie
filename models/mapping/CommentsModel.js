@@ -9,9 +9,6 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var schema = new Schema({
-    comment_id: {
-        type: Schema.ObjectId
-    },
     user_id: {
         type: Schema.ObjectId,
         ref: 'Users'
@@ -24,8 +21,7 @@ var schema = new Schema({
     pub_time: {
         type: Date,
         default: Date.now
-    },
-    pub_author: String
+    }
 });
 
 mongoose.model('Comments', schema);

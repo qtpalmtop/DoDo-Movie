@@ -18,5 +18,7 @@ exports.show = function(req, res) {
 			console.log(film);
 			res.json(film);
 		});
+
+
 	//    res.render('index', { title:'NJBlog.' });
 };
